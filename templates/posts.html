@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %} CRohr.io  {% endblock %}
+
+{% block content %}
+<div class="container">
+
+	<h1>{{data['title']}}</h1>
+	<br>
+	<h5>POSTS : : {{data['postname']}}</h5>
+	<p>{{data['body']}}</p>
+</div>
+<style>
+div.container{
+	padding: 25px 0px;
+}
+</style>
+{% endblock %}

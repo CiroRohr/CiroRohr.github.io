@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}CRohr.io{% endblock %}
+
+{% block content %}
+
+<div class="container">
+	{%for post in posts %}
+		<a href="{{ url_for('post', postname=post['postname']) }}">
+			<div class="row row-cols-4">
+				<div class="col-2">
+				<img src="https://media.istockphoto.com/photos/casual-man-gesturing-thumbs-up-isolated-picture-id182060276?k=6&m=182060276&s=612x612&w=0&h=6J7b_c0L61FFDnmPt5Z24yS_NGm342-civNozQmfzH0=" class="rounded mx-auto d-block" alt="..." width="200" height="150">
+				</div>
+				<div class="col-8">
+					<div class="post-title"><h2>{{post['title']}}</h4></div>
+					<div class="post-date"><h6>{{post['date']}}</h6></div>
+					<div class="post-intro"><h5>{{post['intro']}}</h5></div>
+				</div>
+			</div>
+		</a>
+	{% endfor %}
+</div>
+
+<style>
+div.container{
+	padding: 20px; 
+}
+div.row{
+	padding: 15px;
+}
+a{
+	color: black;
+	text-decoration: none;
+}
+
+.post-title{
+	padding: 10px 0px;
+}
+.post-date{
+	color: grey;
+}
+.post-intro{
+	color: #404040
+}
+
+{% endblock %}
